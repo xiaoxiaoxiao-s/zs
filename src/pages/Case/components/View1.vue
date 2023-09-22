@@ -38,7 +38,8 @@ onMounted(() => {
             <div class="case-info">
                 <img class="case-logo" :src="props.dataSource[isSlide]?.logo || ''" />
                  <div class="info">
-                    <p class="text">{{ props.dataSource[isSlide]?.desc || '' }}</p>
+                    <p class="title">{{ props.dataSource[isSlide]?.title || '' }}</p>
+                    <p class="desc">{{ props.dataSource[isSlide]?.desc || '' }}</p>
                     <p class="btn" @click="goDetail(props.dataSource[isSlide]?.url)">了解更多</p>
                 </div>
             </div>
@@ -93,12 +94,23 @@ onMounted(() => {
         .info {
             // color: #fff;
         }
-        .text {
+        .title {
             font-size: 20px;
-            // width: 60%;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #323232;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 20px;
+        }
+        .desc {
+            font-size: 15px;
+            font-weight: 600;
+            color: #646464;
+            padding: 7.5px 0;
             overflow : hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
