@@ -97,7 +97,6 @@ onMounted(() => {
         .title {
             font-size: 20px;
             font-weight: 600;
-            margin-bottom: 10px;
             color: #323232;
             overflow : hidden;
             text-overflow: ellipsis;
@@ -108,7 +107,6 @@ onMounted(() => {
         }
         .desc {
             font-size: 15px;
-            font-weight: 600;
             color: #646464;
             padding: 7.5px 0;
             overflow : hidden;
