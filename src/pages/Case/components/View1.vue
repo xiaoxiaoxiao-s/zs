@@ -97,6 +97,7 @@ onMounted(() => {
         .title {
             font-size: 20px;
             font-weight: 600;
+            margin-bottom: 0;
             color: #323232;
             overflow : hidden;
             text-overflow: ellipsis;
