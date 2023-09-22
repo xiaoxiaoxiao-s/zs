@@ -150,6 +150,10 @@ onMounted(() => {
             >
                 <a-input v-model:value="formState.num4" placeholder="请填写数量"/>
             </a-form-item>
+
+             <a-form-item>
+                <a-button class="btn" html-type="submit">提交</a-button>
+            </a-form-item>
         </a-form>
     </div>
 </template>
@@ -163,5 +167,12 @@ onMounted(() => {
     .form {
         width: 420px;
     }
+}
+.btn {
+    margin-bottom: 15px;
+    background-color: #f08a00;
+    border-color: #f08a00;
+    color: #fff;
+    width: 100px;
 }
 </style>

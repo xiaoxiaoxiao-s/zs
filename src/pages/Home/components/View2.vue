@@ -7,6 +7,10 @@ const state = reactive({
     num2: undefined,
     num3: undefined,
     num4: undefined,
+    title1: undefined,
+    title2: undefined,
+    title3: undefined,
+    title4: undefined,
 })
 
 const getDetail = async () => {
@@ -21,6 +25,10 @@ const getDetail = async () => {
             state.num2 = res.data.num2
             state.num3 = res.data.num3
             state.num4 = res.data.num4
+            state.title1 = res.data.title1
+            state.title2 = res.data.title2
+            state.title3 = res.data.title3
+            state.title4 = res.data.title4
         }
      } catch (err) {
         console.log(err)
@@ -46,14 +54,14 @@ onMounted(() => {
                     <img class="img1" src="/images/yitouqiye.png" /> 
                     <div>
                         <p class="num">{{ state?.num1 || '0' }}</p>
-                        <p class="desc">已投企业（家）</p>
+                        <p class="desc">{{ state?.title1 || '' }}</p>
                     </div>
                 </div>
                 <div class="card">
                     <img class="img2" src="/images/zhuanxintexing.png" /> 
                     <div>
                         <p class="num">{{ state?.num2 || '0' }}</p>
-                        <p class="desc">专精特新（家）</p>
+                        <p class="desc">{{ state?.title2 || '' }}</p>
                     </div>
                 </div>
             </div>
@@ -62,14 +70,14 @@ onMounted(() => {
                     <img class="img2" src="/images/yituichuqiye.png" /> 
                     <div>
                         <p class="num">{{ state?.num3 || '0' }}</p>
-                        <p class="desc">成功推出企业（家）</p>
+                        <p class="desc">{{ state?.title3 || '' }}</p>
                     </div>
                 </div>
                 <div class="card">
                     <img class="img2" src="/images/shangshigongsi.png" /> 
                     <div>
                        <p class="num">{{ state?.num4 || '0' }}</p>
-                        <p class="desc">上市公司</p>
+                        <p class="desc">{{ state?.title4 || '' }}</p>
                     </div>
                 </div>
             </div>
