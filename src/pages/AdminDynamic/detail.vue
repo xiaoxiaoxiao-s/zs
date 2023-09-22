@@ -101,6 +101,9 @@ const formState = reactive({
 })
 
 const save = async (value) => {
+    if (!value.html) { 
+        return message.error('请输入动态正文')
+    }
     try {
         const { data: res } = await  axios({
             method: 'post',
@@ -127,6 +130,9 @@ const save = async (value) => {
 }
 
 const create = async (value) => {
+    if (!value.html) { 
+        return message.error('请输入动态正文')
+    }
      try {
          const { data: res } = await  axios({
             method: 'post',
@@ -239,7 +245,7 @@ onMounted(() => {
                     </div>
                 </a-upload>
             </a-form-item>
-            <a-form-item label="案例正文" name="html">
+            <a-form-item label="动态正文" name="html">
                 <QuillEditor ref="editor" class="quill-editor" :options="editorOption" v-model:content="formState.html" contentType="html" />
             </a-form-item>
              <a-form-item>
