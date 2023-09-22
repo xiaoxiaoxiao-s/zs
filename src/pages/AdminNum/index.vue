@@ -132,7 +132,7 @@ onMounted(() => {
                 name="num3"
                 :rules="[{ required: true, message: '请填写数量!' }]"
             >
-                <a-input v-model:value="formState.num3" suffix="家" placeholder="请填写数量"/>
+                <a-input v-model:value="formState.num3" placeholder="请填写数量"/>
             </a-form-item>
 
             <a-divider>卡片4</a-divider>
@@ -148,7 +148,7 @@ onMounted(() => {
                 name="num4"
                 :rules="[{ required: true, message: '请填写数量!' }]"
             >
-                <a-input v-model:value="formState.num4" suffix="家" placeholder="请填写数量"/>
+                <a-input v-model:value="formState.num4" placeholder="请填写数量"/>
             </a-form-item>
         </a-form>
     </div>
