@@ -16,7 +16,8 @@ import {
 } from "ant-design-vue";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://129.204.199.243/";
+axios.defaults.baseURL = "http://101.200.160.44/";
+
 
 // axios.defaults.baseURL = 'http://127.0.0.1:3000/'
 
