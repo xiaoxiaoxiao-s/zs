@@ -2,6 +2,9 @@
 import { onMounted, reactive } from 'vue'
 import { message } from 'ant-design-vue';
 import axios from 'axios'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const formState = reactive({
     id: undefined,
@@ -9,6 +12,10 @@ const formState = reactive({
     num2: undefined,
     num3: undefined,
     num4: undefined,
+    title1: undefined,
+    title2: undefined,
+    title3: undefined,
+    title4: undefined,
 })
 
 const onFinish = async (value) => {
@@ -51,14 +58,22 @@ const getDetail = async () => {
             formState.num2 = res.data.num2
             formState.num3 = res.data.num3
             formState.num4 = res.data.num4
+            formState.title1 = res.data.title1
+            formState.title2 = res.data.title2
+            formState.title3 = res.data.title3
+            formState.title4 = res.data.title4
         }
     } catch (err) {
         message.error('新增失败:'+ err);
     }
 }
 
-onMounted(() => {
-    getDetail()
+onMounted(() => { 
+    if (window.localStorage.getItem('ZSKG_TOKEN') !== 'LOGIN') {
+        router.replace('/admin/login')
+    } else { 
+        getDetail()
+    }
 })
 
 </script>
@@ -72,36 +87,68 @@ onMounted(() => {
             autocomplete="off"
             @finish="onFinish"
         >
+            <a-divider>卡片1</a-divider>
             <a-form-item
-                label="已投企业"
+                label="名称"
+                name="title1"
+                :rules="[{ required: true, message: '请填写卡片名称!' }]"
+            >
+                <a-input v-model:value="formState.title1" placeholder="请填写卡片名称"/>
+            </a-form-item>
+            <a-form-item
+                label="数量"
                 name="num1"
-                :rules="[{ required: true, message: '请填写已投企业有多少家!' }]"
+                :rules="[{ required: true, message: '请填写数量!' }]"
             >
-                <a-input v-model:value="formState.num1" suffix="家" placeholder="请填写已投企业有多少家"/>
+                <a-input v-model:value="formState.num1" placeholder="请填写数量"/>
+            </a-form-item>
+
+            <a-divider>卡片2</a-divider>
+            <a-form-item
+                label="名称"
+                name="title2"
+                :rules="[{ required: true, message: '请填写卡片名称!' }]"
+            >
+                <a-input v-model:value="formState.title2" placeholder="请填写卡片名称"/>
             </a-form-item>
             <a-form-item
-                label="专精特新"
+                label="数量"
                 name="num2"
-                :rules="[{ required: true, message: '请填写专精特新有多少家!' }]"
+                :rules="[{ required: true, message: '请填写数量!' }]"
             >
-                <a-input v-model:value="formState.num2" suffix="家" placeholder="请填写专精特新有多少家"/>
+                <a-input v-model:value="formState.num2" placeholder="请填写数量"/>
+            </a-form-item>
+
+            <a-divider>卡片3</a-divider>
+            <a-form-item
+                label="名称"
+                name="title3"
+                :rules="[{ required: true, message: '请填写卡片名称!' }]"
+            >
+                <a-input v-model:value="formState.title3" placeholder="请填写卡片名称"/>
             </a-form-item>
             <a-form-item
-                label="成功推出企业"
+                label="数量"
                 name="num3"
-                :rules="[{ required: true, message: '请填写成功推出企业有多少家!' }]"
+                :rules="[{ required: true, message: '请填写数量!' }]"
             >
-                <a-input v-model:value="formState.num3" suffix="家" placeholder="请填写推出企业有多少家"/>
+                <a-input v-model:value="formState.num3" suffix="家" placeholder="请填写数量"/>
+            </a-form-item>
+
+            <a-divider>卡片4</a-divider>
+            <a-form-item
+                label="名称"
+                name="title4"
+                :rules="[{ required: true, message: '请填写卡片名称!' }]"
+            >
+                <a-input v-model:value="formState.title4" placeholder="请填写卡片名称"/>
             </a-form-item>
             <a-form-item
-                label="上市公司"
+                label="数量"
                 name="num4"
-                :rules="[{ required: true, message: '请填上市公司有多少家!' }]"
+                :rules="[{ required: true, message: '请填写数量!' }]"
             >
-                <a-input v-model:value="formState.num4" suffix="家" placeholder="请填上市公司有多少家"/>
-            </a-form-item>
-               <a-form-item>
-                <a-button class="btn" html-type="submit">保存</a-button>
+                <a-input v-model:value="formState.num4" suffix="家" placeholder="请填写数量"/>
             </a-form-item>
         </a-form>
     </div>

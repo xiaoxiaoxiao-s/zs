@@ -120,6 +120,7 @@ const save = async (value) => {
                 image: value.image[0]?.url || `${value.image[0]?.response?.data}`,
                 date: new Date().getTime(),
                 id: route.query?.id,
+                html: "",
             }
         })
 
@@ -145,7 +146,8 @@ const create = async (value) => {
                 ...value,
                 logo: `${value.logo[0].response.data}`,
                 image: `${value.image[0].response.data}`,
-                date: new Date().getTime()
+                date: new Date().getTime(),
+                html: "",
             }
          })
          if (res.code === 0) {

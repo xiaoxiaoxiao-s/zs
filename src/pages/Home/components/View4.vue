@@ -49,7 +49,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 .title {
     display: flex;
