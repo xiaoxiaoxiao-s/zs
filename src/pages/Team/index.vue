@@ -144,9 +144,9 @@ onMounted(() => {
 .title-text {
     color: #646464;
     margin: 10px 30px 30px;
-    font-weight: 600;
     letter-spacing: 1px;
     line-height: 32px;
+    font-size: 17px;
 }
 .yh {
     margin-top: -15px;
