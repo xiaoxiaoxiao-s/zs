@@ -20,12 +20,11 @@ const swiperRight = () => {
     swiperEl.swiper.slideNext()
 }
 
-const goDetail = (item) => {
-    let typeText = ''
-    item.type === 0 && (typeText = '新制造')
-    item.type === 1 && (typeText = '新能源')
-    item.type === 2 && (typeText = '物联网')
-    router.push('/case/detail?id=' + item?._id + `&type=${typeText}`)
+const goDetail = (link) => {
+    if (!link) {
+        message.error('未获取到详情链接')
+    }
+    window.open(link)
 }
 
 onMounted(() => {
@@ -42,7 +41,7 @@ onMounted(() => {
                 <img class="case-logo" :src="props.dataSource[isSlide]?.logo || ''" />
                  <div class="info">
                     <p class="text">{{ props.dataSource[isSlide]?.desc || '' }}</p>
-                    <p class="btn" @click="goDetail(props.dataSource[isSlide])">了解更多</p>
+                    <p class="btn" @click="goDetail(props.dataSource[isSlide]?.url)">了解更多</p>
                 </div>
             </div>
             <div class="swiper-view">
