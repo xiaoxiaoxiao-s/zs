@@ -273,9 +273,3 @@ onMounted(() => {
     width: 100px;
 }
 </style>
-
-<style>
-.ql-editor {
-    height: 300px;
-}
-</style>

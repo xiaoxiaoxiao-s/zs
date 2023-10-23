@@ -321,8 +321,3 @@ onMounted(() => {
 }
 </style>
 
-<style>
-.ql-editor {
-    height: 300px;
-}
-</style>

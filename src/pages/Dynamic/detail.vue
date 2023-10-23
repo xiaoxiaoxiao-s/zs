@@ -4,6 +4,8 @@ import { useRoute } from 'vue-router';
 import axios from 'axios'
 import { useActions } from 'vuex-composition-helpers/dist'
 
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 import Menu from '@/components/Menu'
 
 const { setMenuIndex } = useActions(['setMenuIndex'])
@@ -47,7 +49,7 @@ onMounted(() => {
                 <!-- <img src="/images/title-icon.png" /> -->
                 <p>{{ state?.title }}</p>
             </div>
-            <div v-html="state.html"></div>
+            <div class="ql-editor" v-html="state.html"></div>
         </div>
     </div>
 </template>
