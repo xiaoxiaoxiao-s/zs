@@ -50,7 +50,7 @@ onMounted(() => {
 
                 <div class="flex">
                     <p class="msg-text1 fool-text">北京：北京市朝阳区望京金辉大厦2901</p>
-                    <p class="msg-text1 fool-text">深圳：深圳市保安区辅三路金港商务大厦B座1810</p>
+                    <p class="msg-text1 fool-text">深圳：深圳市宝安区辅三路金港商务大厦B座1810</p>
                 </div>
 
                 <p class="msg-text1 fool-text">电话: 010-64788187</p>
